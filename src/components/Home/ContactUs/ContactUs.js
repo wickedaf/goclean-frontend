@@ -6,14 +6,14 @@ const ContactUs = () => {
     return (
         <section className="section position-relative bg-gradient py-5">
           <div className="bg-cta-overlay" />
-          <Container className="container">
+          <Container className="container py-5">
             <Row className="justify-content-center">
               <Col lg={6}>
                 <div className="text-center">
                   <h2 className="text-white mb-3">
                     Do You Need Success Product Also?
                   </h2>
-                  <Link to="#" className="btn btn-light mt-4">
+                  <Link to="#" className="btn btn-light text-dark mt-4">
                     Estimate Project
                   </Link>
                   <Link to="#" className="text-white-50">

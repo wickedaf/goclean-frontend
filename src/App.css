@@ -3,9 +3,11 @@ a {
 }
 ::selection {
   color: white;
-  background: firebrick;
+  background: #2b53e1;
 }
-
+.dot{
+  background:#292d32 !important;
+}
 .btn-primary {
   background-color: #2b53e1 !important;
   border: 1px solid #2b53e1 !important;
@@ -18,6 +20,52 @@ a {
 .btn-primary.active {
   background-color: #1e46d4 !important;
   border: 1px solid #1e46d4 !important;
+  color: #ffffff;
+}
+
+.btn-outline-primary {
+  border: 1px solid #2b53e1 !important;
+  color: #2b53e1;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary.active {
+  background-color: #2b53e1 !important;
+  border: 1px solid #2b53e1 !important;
+  -webkit-box-shadow: 0 3px 10px rgba(43, 83, 225, 0.5);
+  box-shadow: 0 3px 10px rgba(43, 83, 225, 0.5);
+  color: #ffffff;
+}
+
+.btn-dark {
+  background-color: #343a40 !important;
+  border: 1px solid #343a40 !important;
+  -webkit-box-shadow: 0 3px 10px rgba(52, 58, 64, 0.5) !important;
+  box-shadow: 0 3px 10px rgba(52, 58, 64, 0.5) !important;
+  color: #ffffff;
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark.active {
+  background-color: #292d32 !important;
+  border: 1px solid #292d32 !important;
+  color: #ffffff;
+}
+
+.btn-outline-dark {
+  border: 1px solid #343a40 !important;
+  color: #343a40;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus,
+.btn-outline-dark.active {
+  background-color: #343a40 !important;
+  border: 1px solid #343a40 !important;
+  -webkit-box-shadow: 0 3px 10px rgba(52, 58, 64, 0.5);
+  box-shadow: 0 3px 10px rgba(52, 58, 64, 0.5);
   color: #ffffff;
 }
 .bg-overlay {
@@ -75,7 +123,7 @@ a {
   border: 1px solid #fcfcfc !important;
   -webkit-box-shadow: 0 3px 10px rgba(252, 252, 252, 0.5) !important;
   box-shadow: 0 3px 10px rgba(252, 252, 252, 0.5) !important;
-  color: #ffffff;
+  color: #000000;
 }
 
 .btn-light:hover,

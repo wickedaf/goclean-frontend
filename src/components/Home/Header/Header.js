@@ -34,7 +34,7 @@ const Header = () => {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis veniam molestias eum deserunt labore unde.
             </p>
-            <Button className="px-4 py-2" variant="danger">
+            <Button className="px-4 py-2" variant="dark">
               <span className="p-0 lead">Learn more</span>
             </Button>
           </div>

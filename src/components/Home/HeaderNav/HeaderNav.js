@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './HeaderNav.css';
+import { UserContext } from "../../../App";
+import "./HeaderNav.css";
 
 const HeaderNav = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <Navbar className="container" collapseOnSelect expand="lg">
       <Navbar.Brand className="">
@@ -22,13 +24,13 @@ const HeaderNav = () => {
           </Link>
           <Link
             className="mx-3 my-2 text-white font-weight-bold lead text-decoration-none"
-            to="/orders"
+            to="/about-us"
           >
-            Orders
+            About Us
           </Link>
           <Link
             className="mx-3 my-2 text-white font-weight-bold lead text-decoration-none"
-            to="/admin"
+            to="/dashboard"
           >
             Admin
           </Link>
@@ -37,13 +39,19 @@ const HeaderNav = () => {
             to="/"
             disabled
           >
-            Deals
+            Contact
           </Link>
-          <Button className="rounded-lg py-2 px-4" variant="danger">
-            <Link className="text-white lead text-decoration-none" to="/login">
-              Login
-            </Link>
-          </Button>
+          {loggedInUser.isSignedIn ? (
+            <button type="button" className="btn btn-dark my-1">
+              {loggedInUser.name}
+            </button>
+          ) : (
+            <Button className="rounded-lg" variant="dark">
+              <Link className="lead text-white text-decoration-none" to="/login">
+                Login
+              </Link>
+            </Button>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
