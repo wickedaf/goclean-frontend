@@ -1,12 +1,19 @@
 import React from "react";
+import { useContext } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
+import { UserContext } from "../../../App";
 import './ServiceDetail.css';
 
 const ServiceDetail = ({ service }) => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const history = useHistory();
   const handleOrderClick = () => {
-    history.push(`/dashboard/order/${service.name}`)
+    if(loggedInUser.email){
+      history.push(`/dashboard/order/${service.name}`)
+    }else{
+      history.push("/login")
+    }
   }
   return (
     <Card style={{ width: "18rem" }} className="m-3 p-3">

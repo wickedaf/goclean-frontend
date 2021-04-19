@@ -51,56 +51,52 @@ const OrderList = () => {
 
   return (
     <div className="ml-5 my-5">
-      { loggedInUser.email 
-      ? <Table striped hover className="shadow rounded-lg border-0 table-responsive-sm">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Service</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {orders?.map((order) => (
+      <Table striped hover className="shadow rounded-lg border-0 table-responsive-sm">
+        <thead>
           <tr>
-            <td>{order.name}</td>
-            <td>{order.email}</td>
-            <td>{order.service}</td>
-            <td className="text-success">
-              {isAdmin ? (
-                <Form.Control
-                  onChange={(event) => handleStatus(order._id, event)}
-                  as="select"
-                  className="mr-sm-2"
-                  id="inlineFormCustomSelect"
-                  custom
-                >
-                  <option value={order.status}>{order.status}</option>
-                  <option value="Pending">Pending</option>
-                  <option value="Ongoing">Ongoing</option>
-                  <option value="Done">Done</option>
-                </Form.Control>
-              ) : (
-                <Form.Control
-                  onChange={(event) => handleStatus(order._id, event)}
-                  as="select"
-                  className="mr-sm-2"
-                  id="inlineFormCustomSelect"
-                  custom
-                  disabled
-                >
-                  <option value={order.status}>{order.status}</option>
-                </Form.Control>
-              )}
-            </td>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service</th>
+            <th>Status</th>
           </tr>
-        ))}
-      </tbody>
-    </Table>
-    : <h1 className="text-danger display-4">Your session has expired. Please Logout and Login again!!!</h1>
-    }
-      
+        </thead>
+        <tbody>
+          {orders?.map((order) => (
+            <tr>
+              <td>{order.name}</td>
+              <td>{order.email}</td>
+              <td>{order.service}</td>
+              <td className="text-success">
+                {isAdmin ? (
+                  <Form.Control
+                    onChange={(event) => handleStatus(order._id, event)}
+                    as="select"
+                    className="mr-sm-2"
+                    id="inlineFormCustomSelect"
+                    custom
+                  >
+                    <option value={order.status}>{order.status}</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Done">Done</option>
+                  </Form.Control>
+                ) : (
+                  <Form.Control
+                    onChange={(event) => handleStatus(order._id, event)}
+                    as="select"
+                    className="mr-sm-2"
+                    id="inlineFormCustomSelect"
+                    custom
+                    disabled
+                  >
+                    <option value={order.status}>{order.status}</option>
+                  </Form.Control>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };
