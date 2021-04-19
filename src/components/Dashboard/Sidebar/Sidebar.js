@@ -16,7 +16,7 @@ const Sidebar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("https://goclean-react.herokuapp.com/orders?email=" + loggedInUser.email)
+    fetch("https://goclean-react.herokuapp.com/adminCheck?email=" + loggedInUser.email)
       .then((res) => res.json())
       .then((data) => {
         if (data.length !== 0) {
