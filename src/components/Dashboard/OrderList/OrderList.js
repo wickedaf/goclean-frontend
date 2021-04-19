@@ -37,7 +37,7 @@ const OrderList = () => {
       status: status,
     };
 
-    fetch("http://localhost:4200/updateStatus", {
+    fetch("https://goclean-react.herokuapp.com/updateStatus", {
       method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(statusData),
