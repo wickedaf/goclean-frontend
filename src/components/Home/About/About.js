@@ -14,7 +14,7 @@ const About = () => {
     });
   }, []);
   return (
-    <section className="container my-5 py-5">
+    <section className="container my-5 py-5" id="about-us">
       <div className="row align-items-center">
         <div className="col-md-6">
           <p className="lead font-weight-bold m-0 p-0">About</p>

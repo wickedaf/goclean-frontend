@@ -23,7 +23,7 @@ const ManageService = () => {
 
   return (
     <div className="ml-5 my-5">
-      <Table striped hover className="shadow rounded-lg border-0">
+      <Table striped hover className="shadow rounded-lg border-0 table-responsive-sm">
         <thead>
           <tr>
             <th>Description</th>

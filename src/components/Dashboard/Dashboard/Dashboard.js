@@ -15,6 +15,9 @@ const Dashboard = () => {
       <Sidebar></Sidebar>
       <div className="content bg-light">
         <Switch>
+          <Route exact path={`${path}/`}>
+             <OrderList></OrderList>
+          </Route>
           <Route path={`${path}/order/:serviceName`}>
              <Order></Order>
           </Route>

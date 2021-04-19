@@ -1,5 +1,7 @@
 import {
   faFacebook,
+  faGithub,
+  faLinkedinIn,
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -39,9 +41,9 @@ const Footer = () => {
                   <br />
                   Bangladesh
                 </p>
-                <p className="lead">Phone: 666 888 000</p>
+                <a href="tel:+8801843356499" className="lead text-decoration-none">Phone: +880 1843356499</a>
                 <p className="lead">
-                  E-mail: <Link to="#">rd.emon2@gmail.com</Link>
+                  E-mail: <a href="#">rd.emon2@gmail.com</a>
                 </p>
               </aside>
             </div>
@@ -50,40 +52,40 @@ const Footer = () => {
                 <h3 className="display-4 text-uppercase">Social</h3>
                 <ul>
                   <li>
-                    <Link
+                    <a
                       className="d-flex align-items-center text-decoration-none"
-                      to="#"
+                      href="http://linkedin.com/in/ishahriaremon"
                     >
                       <FontAwesomeIcon
                         className="text-black social-icon mr-2"
-                        icon={faTwitter}
+                        icon={faLinkedinIn}
                       />
-                      Twitter
-                    </Link>
+                      LinkedIn
+                    </a>
                   </li>
                   <li>
-                    <Link
+                    <a
                       className="d-flex align-items-center text-decoration-none"
-                      to="#"
+                      href="http://facebook.com/wickedaf"
                     >
                       <FontAwesomeIcon
                         className="text-black social-icon mr-2"
                         icon={faFacebook}
                       />
                       Facebook
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
+                    <a
                       className="d-flex align-items-center text-decoration-none"
-                      to="#"
+                      href="http://github.com/wickedaf"
                     >
                       <FontAwesomeIcon
                         className="text-black social-icon mr-2"
-                        icon={faYoutube}
+                        icon={faGithub}
                       />
-                      Youtube
-                    </Link>
+                      Github
+                    </a>
                   </li>
                 </ul>
               </aside>

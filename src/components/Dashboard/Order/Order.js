@@ -18,7 +18,7 @@ const Order = () => {
   return (
     <div className="mt-5 ml-5">
       <Elements stripe={stripePromise}>
-        <SimpleCardForm serviceName={serviceName}></SimpleCardForm>
+        <SimpleCardForm loggedInUser={loggedInUser} serviceName={serviceName}></SimpleCardForm>
       </Elements>
     </div>
   );

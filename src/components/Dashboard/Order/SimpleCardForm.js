@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 
 
-const SimpleCardForm = ({serviceName}) => {
+const SimpleCardForm = ({serviceName, loggedInUser}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [ paymentError, setPaymentError] = useState(null);
@@ -49,6 +49,7 @@ const SimpleCardForm = ({serviceName}) => {
         ...data,
         paymentInfo: paymentMethod.id,
         orderTime: new Date(),
+        status: "Pending"
       };
       fetch("https://goclean-react.herokuapp.com/addOrder", {
         method: "POST",
@@ -60,17 +61,20 @@ const SimpleCardForm = ({serviceName}) => {
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
+          alert("Payment Recived, Order is processing")
         })
         .catch((error) => {
           console.error("Error:", error);
         });
     }
+    event.target.reset();
   };
 
   return (
     <form className="w-50" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
             <input
+              defaultValue={loggedInUser.name}
               placeholder="Your Name"
               type="text"
               className="form-control col"
@@ -79,6 +83,7 @@ const SimpleCardForm = ({serviceName}) => {
           </div>
           <div className="form-group">
             <input
+              defaultValue={loggedInUser.email}
               placeholder="Your Email"
               type="text"
               className="form-control"

@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../../../App";
 import "./HeaderNav.css";
 
 const HeaderNav = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+  const history = useHistory();
+  const handleLoginClick = () => {
+    history.push("/login")
+  }
   return (
     <Navbar className="container" collapseOnSelect expand="lg">
       <Navbar.Brand className="">
@@ -22,35 +27,34 @@ const HeaderNav = () => {
           >
             Home
           </Link>
-          <Link
+          <a
             className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
-            to="/about-us"
+            href="#about-us"
           >
             About Us
-          </Link>
+          </a>
           <Link
             className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
-            to="/dashboard"
+            to="/dashboard/"
           >
-            Admin
+            Dashboard
           </Link>
-          <Link
+          <a
             className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
-            to="/"
-            disabled
+            href="#contact"
           >
             Contact
-          </Link>
+          </a>
           {loggedInUser.isSignedIn ? (
             <button type="button" className="btn btn-dark my-1">
               {loggedInUser.name} 
               {/* <img src={loggedInUser.photo} className="rounded-circle w-25 px-2" alt=""/> */}
             </button>
           ) : (
-            <Button className="rounded-lg" variant="dark">
-              <Link className="lead text-white text-decoration-none" to="/login">
+            <Button onClick={handleLoginClick} className="rounded-lg" variant="dark">
+              <span className="lead text-white text-decoration-none">
                 Login
-              </Link>
+              </span>
             </Button>
           )}
         </Nav>
