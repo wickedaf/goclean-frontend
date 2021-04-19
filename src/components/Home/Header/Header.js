@@ -28,7 +28,7 @@ const Header = () => {
         <div className="row d-flex align-items-center">
           <div className="col-md-6">
             <h1 className="display-4">
-              Your New Smile <br /> Starts Here
+            Examples of great <br/> cleaning that get it right
             </h1>
             <p className="text-white lead">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.

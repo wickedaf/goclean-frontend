@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import { createContext, useState } from 'react';
 import Login from './components/Auth/Login/Login';
 import PrivateRoute from './components/Auth/PrivateRoute/PrivateRoute';
+import NoMatch from './components/Home/NoMatch/NoMatch';
 
 export const UserContext = createContext();
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="*">
+            <NoMatch />
           </Route>
         </Switch>
     </Router>

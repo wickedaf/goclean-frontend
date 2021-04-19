@@ -17,25 +17,25 @@ const HeaderNav = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav>
           <Link
-            className="mx-3 my-2 text-white font-weight-bold lead text-decoration-none"
+            className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
             to="/"
           >
             Home
           </Link>
           <Link
-            className="mx-3 my-2 text-white font-weight-bold lead text-decoration-none"
+            className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
             to="/about-us"
           >
             About Us
           </Link>
           <Link
-            className="mx-3 my-2 text-white font-weight-bold lead text-decoration-none"
+            className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
             to="/dashboard"
           >
             Admin
           </Link>
           <Link
-            className="mx-3 my-2 text-white font-weight-bold lead text-decoration-none"
+            className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
             to="/"
             disabled
           >
@@ -43,7 +43,8 @@ const HeaderNav = () => {
           </Link>
           {loggedInUser.isSignedIn ? (
             <button type="button" className="btn btn-dark my-1">
-              {loggedInUser.name}
+              {loggedInUser.name} 
+              {/* <img src={loggedInUser.photo} className="rounded-circle w-25 px-2" alt=""/> */}
             </button>
           ) : (
             <Button className="rounded-lg" variant="dark">
