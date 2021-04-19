@@ -2,7 +2,14 @@ import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../../../App";
+import firebase from "firebase/app";
+import "firebase/auth";
 import "./HeaderNav.css";
+import firebaseConfig from "../../Auth/Login/firebase.config";
+
+if(firebase.apps.length === 0 ){ 
+  firebase.initializeApp(firebaseConfig);
+}
 
 const HeaderNav = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -10,6 +17,25 @@ const HeaderNav = () => {
   const history = useHistory();
   const handleLoginClick = () => {
     history.push("/login")
+  }
+
+  const handleLogoutClick = () => {
+    firebase.auth().signOut().then(() => {
+      setLoggedInUser("")
+      console.log("Sign out successful");
+    }).catch((error) => {
+      // An error happened.
+    });
+    sessionStorage.removeItem('token')
+  }
+
+  const handleDashboardClick = () => {
+    if(loggedInUser.email){
+      history.push("/dashboard")
+    }else{
+      handleLogoutClick();
+      history.push("/login")
+    }
   }
   return (
     <Navbar className="container" collapseOnSelect expand="lg">
@@ -33,12 +59,13 @@ const HeaderNav = () => {
           >
             About Us
           </a>
-          <Link
+          <p
+            style={{cursor: "pointer"}}
             className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
-            to="/dashboard/"
+            onClick={handleDashboardClick}
           >
             Dashboard
-          </Link>
+          </p>
           <a
             className="mx-3 my-2 text-dark font-weight-bold lead text-decoration-none"
             href="#contact"
@@ -46,8 +73,8 @@ const HeaderNav = () => {
             Contact
           </a>
           {loggedInUser.isSignedIn ? (
-            <button type="button" className="btn btn-dark my-1">
-              {loggedInUser.name} 
+            <button onClick={handleLogoutClick} type="button" className="btn btn-dark my-1">
+              Logout 
               {/* <img src={loggedInUser.photo} className="rounded-circle w-25 px-2" alt=""/> */}
             </button>
           ) : (
