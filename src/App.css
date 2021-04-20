@@ -63,7 +63,6 @@ a {
 .btn-outline-dark:focus,
 .btn-outline-dark.active {
   background-color: #343a40 !important;
-  border: 1px solid #343a40 !important;
   -webkit-box-shadow: 0 3px 10px rgba(52, 58, 64, 0.5);
   box-shadow: 0 3px 10px rgba(52, 58, 64, 0.5);
   color: #ffffff;

@@ -78,7 +78,7 @@ const HeaderNav = () => {
               {/* <img src={loggedInUser.photo} className="rounded-circle w-25 px-2" alt=""/> */}
             </button>
           ) : (
-            <Button onClick={handleLoginClick} className="rounded-lg" variant="dark">
+            <Button onClick={handleLoginClick} className="rounded-lg py-0" variant="dark">
               <span className="lead text-white text-decoration-none">
                 Login
               </span>

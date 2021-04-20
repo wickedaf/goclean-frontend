@@ -1,5 +1,9 @@
 .social-btn img{
-    height: 100%;
+    height: 25px !important;
+    
+}
+.social-btn{
+  border: 0 !important;
 }
 
 
