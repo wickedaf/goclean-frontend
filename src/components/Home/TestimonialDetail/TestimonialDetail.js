@@ -3,7 +3,7 @@ import React from "react";
 const TestimonialDetail = (props) => {
   const {img, name, company, description} = props.testimonial;
   return (
-    <div className="item py-3 ">
+    <div className="item py-3">
       <div className="testi-content bg-white text-center m-3">
         <img
           src={img}
